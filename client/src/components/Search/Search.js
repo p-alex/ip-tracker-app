@@ -3,7 +3,7 @@ import "./Search.scss";
 export default function Search() {
   return (
     <form className="search">
-      <label for="submit">Search</label>
+      <label htmlFor="submit">Search</label>
       <input
         type="text"
         name="query"

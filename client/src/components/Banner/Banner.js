@@ -1,5 +1,6 @@
 import React from "react";
 import "./Banner.scss";
+import Search from "../Search/Search";
 export default function Banner({ children }) {
   return (
     <header
@@ -8,8 +9,9 @@ export default function Banner({ children }) {
     >
       <div className="banner_container">
         <h1>IP Address Tracker</h1>
-        {children}
+        <Search />
       </div>
+      {children}
     </header>
   );
 }

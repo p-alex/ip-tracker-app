@@ -1,11 +1,10 @@
 import Banner from "./components/Banner/Banner";
-import Search from "./components/Search/Search";
+import DataDisplay from "./components/DataDisplay/DataDisplay";
 function App() {
   return (
     <>
-      <Banner>
-        <Search />
-      </Banner>
+      <Banner />
+      <DataDisplay />
     </>
   );
 }
