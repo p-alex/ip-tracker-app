@@ -8,7 +8,6 @@ export default function Search() {
         type="text"
         name="query"
         placeholder="Search for any IP address or domain"
-        value="192.212.174.101"
       />
       <button type="submit" name="submit">
         <i className="fas fa-chevron-right"></i>
