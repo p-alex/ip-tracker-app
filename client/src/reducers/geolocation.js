@@ -4,6 +4,8 @@ export default (geolocation = {}, action) => {
       return action.payload;
     case "GEOLOCATION_SEARCH":
       return action.payload;
+    case "RESET_GEOLOCATION":
+      return {};
     default:
       return geolocation;
   }

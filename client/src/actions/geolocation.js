@@ -8,10 +8,18 @@ export const fetchGeolocationCurrent = () => async (dispatch) => {
   }
 };
 
-export const fetchGeolocationSearch = (ip) => async (dispatch) => {
+export const fetchGeolocationSearch = (query) => async (dispatch) => {
   try {
-    const { data } = await api.fetchGeolocationSearch(ip);
+    const { data } = await api.fetchGeolocationSearch(query);
     dispatch({ type: "GEOLOCATION_SEARCH", payload: data });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const resetGeolocation = () => async (dispatch) => {
+  try {
+    dispatch({ type: "RESET_GEOLOCATION" });
   } catch (error) {
     console.log(error);
   }

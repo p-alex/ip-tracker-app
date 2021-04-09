@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
 import "./DataDisplay.scss";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchGeolocationCurrent } from "../../actions/data";
+import { fetchGeolocationCurrent } from "../../actions/geolocation";
+import Loader from "../../ui/Loader";
 export default function DataDisplay() {
   const dispatch = useDispatch();
   const geolocation = useSelector((state) => state.geolocation);
@@ -32,7 +33,14 @@ export default function DataDisplay() {
             <h1>{geolocation?.isp}</h1>
           </div>
         </main>
-      ) : null}
+      ) : (
+        <Loader />
+      )}
+      <center>
+        {geolocation.message !== undefined ? (
+          <span className="error">{geolocation?.message}</span>
+        ) : null}
+      </center>
     </>
   );
 }

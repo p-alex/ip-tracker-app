@@ -5,7 +5,6 @@ require("dotenv").config();
 const url = "https://geo.ipify.org/api/v1";
 const apiKey = process.env.GEOLOCATION_APIKEY;
 router.get("/geolocation/current", (req, res) => {
-  console.log(`${url}?apiKey=${apiKey}`);
   axios
     .get(`${url}?apiKey=${apiKey}`)
     .then((response) => {
@@ -15,14 +14,19 @@ router.get("/geolocation/current", (req, res) => {
 });
 
 router.post("/geolocation/search", (req, res) => {
-  const ip = req.body.ip;
+  const { query } = req.body;
+  console.log(query);
   axios
-    .get(`${url}?apikey=${apiKey}&ipAddress=${ip}`)
+    .get(`${url}?apiKey=${apiKey}&domain=${query}`)
     .then((response) => {
       const { data } = response;
       res.json(data);
     })
-    .catch(res.status(404).json({ message: "Invalid ip address" }));
+    .catch((error) => {
+      if (error) {
+        res.json({ message: "Doesn't exist." });
+      }
+    });
 });
 
 module.exports = router;

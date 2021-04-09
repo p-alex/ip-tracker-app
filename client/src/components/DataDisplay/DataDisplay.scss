@@ -15,6 +15,15 @@
   @media (max-width: 1155px) {
     width: 95%;
   }
+  animation-name: scale;
+  animation-duration: 300ms;
+}
+.error {
+  position: relative;
+  background: white;
+  border-radius: 15px;
+  padding: 10px 20px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
 }
 
 .data-container {
@@ -40,4 +49,13 @@
 
 .data-container:last-child {
   border: 0;
+}
+
+@keyframes scale {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
 }
