@@ -1,5 +1,6 @@
 import axios from "axios";
+const url = "https://ip-tracker-app.herokuapp.com";
 export const fetchGeolocationCurrent = () =>
-  axios.get(`/api/geolocation/current`);
+  axios.get(`${url}/api/geolocation/current`);
 export const fetchGeolocationSearch = (query) =>
-  axios.post(`/api/geolocation/search`, { query });
+  axios.post(`${url}/api/geolocation/search`, { query });
