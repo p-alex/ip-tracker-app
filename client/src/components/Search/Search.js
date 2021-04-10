@@ -24,7 +24,7 @@ export default function Search() {
         value={query}
         onChange={(e) => setQuery(e.target.value)}
       />
-      <button type="submit" name="submit">
+      <button type="submit" name="submit" title undefined>
         <i className="fas fa-chevron-right"></i>
       </button>
     </form>

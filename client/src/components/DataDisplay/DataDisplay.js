@@ -36,11 +36,12 @@ export default function DataDisplay() {
       ) : (
         <Loader />
       )}
-      <center>
-        {geolocation?.message ? (
-          <span className="error">No result.</span>
-        ) : null}
-      </center>
+
+      {geolocation?.message ? (
+        <span className="error">
+          <p>No result.</p>
+        </span>
+      ) : null}
     </>
   );
 }

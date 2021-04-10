@@ -22,11 +22,15 @@
   animation-duration: 300ms;
 }
 .error {
+  display: block;
+  width: 120px;
+  text-align: center;
   position: relative;
   background: white;
   border-radius: 15px;
   padding: 10px 20px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+  margin: auto;
 }
 
 .data-container {
@@ -44,9 +48,12 @@
   }
   p {
     margin-bottom: 10px;
-    &:last-of-type {
-      margin-bottom: 0;
+    @media (max-width: 1155px) {
+      &:last-of-type {
+        margin-bottom: 0;
+      }
     }
+
     color: var(--darkGray);
     font-weight: 500;
     letter-spacing: 1px;
@@ -58,7 +65,7 @@
     @media (max-width: 1155px) {
       height: auto;
     }
-    font-size: 1.9rem;
+    font-size: 1.8rem;
   }
 }
 
