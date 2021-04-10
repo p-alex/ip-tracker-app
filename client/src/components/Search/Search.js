@@ -16,15 +16,20 @@ export default function Search() {
   };
   return (
     <form className="search" onSubmit={(e) => handleSubmit(e, query)}>
-      <label htmlFor="submit">Search</label>
-      <input
-        type="text"
-        name="query"
-        placeholder="Search for any IP address or domain"
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
-      />
-      <button type="submit" name="submit" title undefined>
+      <label>
+        <input
+          type="text"
+          name="query"
+          id="query"
+          placeholder="Search for any IP address or domain"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          title
+          undefined
+        />
+      </label>
+
+      <button type="submit" name="submit" title="undefined">
         <i className="fas fa-chevron-right"></i>
       </button>
     </form>
