@@ -1,6 +1,6 @@
 import axios from "axios";
-const url = "https://ip-tracker-app.herokuapp.com";
-export const fetchGeolocationCurrent = () =>
-  axios.get(`${url}/api/geolocation/current`);
+const url =
+  "https://geo.ipify.org/api/v1?apiKey=at_Y4kRFfp3LmowaElGb5AL9oDLFcOMj";
+export const fetchGeolocationCurrent = () => axios.get(`${url}`);
 export const fetchGeolocationSearch = (query) =>
-  axios.post(`${url}/api/geolocation/search`, { query });
+  axios.get(`${url}&domain=${query}`);
