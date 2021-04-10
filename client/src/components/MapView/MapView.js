@@ -7,7 +7,7 @@ import markerIconPng from "../../static/icon-location.svg";
 export default function MapView() {
   const geolocation = useSelector((state) => state.geolocation);
   return (
-    <div className="mapContainer">
+    <>
       {geolocation?.location !== undefined ? (
         <MapContainer
           center={[geolocation?.location?.lat, geolocation?.location?.lng]}
@@ -32,6 +32,6 @@ export default function MapView() {
           </Marker>
         </MapContainer>
       ) : null}
-    </div>
+    </>
   );
 }

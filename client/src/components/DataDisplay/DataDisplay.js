@@ -37,8 +37,8 @@ export default function DataDisplay() {
         <Loader />
       )}
       <center>
-        {geolocation.message !== undefined ? (
-          <span className="error">{geolocation?.message}</span>
+        {geolocation?.message ? (
+          <span className="error">No result.</span>
         ) : null}
       </center>
     </>
